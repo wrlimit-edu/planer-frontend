@@ -1,0 +1,19 @@
+category component
+<div class="categories">
+
+  <!--
+  <div class="item"
+    *ngFor="let category of categories;"
+    (click)="showTasksByCategory(category)"
+    [class.active]="category === selected"
+  >
+  -->
+  <div>
+    <i class="material-icons">pets</i>
+    <span>Все задачи</span>
+  </div>
+  <div class="item" *ngFor="let category of categories;">
+    <i class="material-icons">{{ category.icon }}</i>
+    <span>{{ category.name }}</span>
+  </div>
+</div>
