@@ -1,0 +1,16 @@
+.mat-dialog-content {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+p {
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 60, 120, .1);
+}
+.mat-dialog-actions {
+  justify-content: flex-end;
+  margin-bottom: -10px;
+}

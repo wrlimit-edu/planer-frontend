@@ -1,0 +1,91 @@
+.tableBlock {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 60, 120, .1);
+  border-radius: 10px;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 30px;
+  border-bottom: 1px solid rgba(0, 60, 120, .1);
+}
+.title p {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(0, 60, 120, .6);
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+.button:hover {
+  color: rgba(250, 100, 70, 1);
+}
+.body {
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border: 1px solid rgba(0, 60, 120, .1);
+  border-bottom: none;
+}
+.mat-header-row {
+  height: 40px;
+  padding: 0;
+  background-color: rgba(0, 60, 120, .02);
+}
+.mat-row {
+  height: 40px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+.mat-row:hover {
+  background-color: rgba(0, 60, 120, .01);
+}
+.mat-header-cell {
+  color: rgba(0, 60, 120, .6);
+  border-color: rgba(0, 60, 120, .1);
+}
+.mat-cell {
+  color: rgba(0, 60, 120, 1);
+  border-color: rgba(0, 60, 120, .1);
+}
+.mat-cell:first-child {
+  width: 50px;
+  padding: 0;
+}
+.firstTd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+i {
+  font-size: 20px;
+  color: rgba(50, 150, 50, 1);
+  padding: 0;
+}
+.color {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  margin: auto;
+}
+

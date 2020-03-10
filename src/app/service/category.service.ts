@@ -18,7 +18,7 @@ export class CategoryService {
     return this.http.post<Category>('http://localhost:8889/api/category', category);
   }
 
-  get(id: number): Observable<Category> {
+  get(id: string): Observable<Category> {
     return this.http.get<Category>('http://localhost:8889/api/category/' + id);
   }
 
@@ -26,7 +26,7 @@ export class CategoryService {
     return this.http.put<Category>('http://localhost:8889/api/category', category);
   }
 
-  delete(id: number): Observable<Category> {
+  delete(id: string): Observable<Category> {
     return this.http.delete<Category>('http://localhost:8889/api/category/' + id);
   }
 }

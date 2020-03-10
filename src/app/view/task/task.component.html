@@ -1,0 +1,51 @@
+<div class="tableBlock">
+
+  <div class="title">
+    <p>{{ selectedCategory ? selectedCategory.name : 'Все задачи' }}</p>
+    <div class="buttons">
+      <div class="button" (click)="openTaskDialog(null)">Добавить задачу</div>
+    </div>
+  </div>
+  <div class="body">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="color">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let task">
+          <div class="firstTd">
+            <i *ngIf="task.completed;  else elseBlock" class="material-icons-outlined">check_box</i>
+            <ng-template #elseBlock>
+              <div class="color" [style.background-color]="task.priority.color"></div>
+            </ng-template>
+          </div>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Название</th>
+        <td mat-cell *matCellDef="let task">
+          {{ task.name }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef>Категория</th>
+        <td mat-cell *matCellDef="let task">
+          {{ task.category.name }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="priority">
+        <th mat-header-cell *matHeaderCellDef>Приоритет</th>
+        <td mat-cell *matCellDef="let task">
+          {{ task.priority.name }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Дата</th>
+        <td mat-cell *matCellDef="let task">
+          {{ task.date }}
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
+

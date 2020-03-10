@@ -1,19 +1,33 @@
-category component
-<div class="categories">
-
-  <!--
-  <div class="item"
-    *ngFor="let category of categories;"
-    (click)="showTasksByCategory(category)"
-    [class.active]="category === selected"
-  >
-  -->
-  <div>
-    <i class="material-icons">pets</i>
-    <span>Все задачи</span>
+<div class="items">
+  <div class="item">
+    <div class="button"
+         (click)="showTasksByCategory(null)"
+         [class.active]="selectedCategory == null"
+    >
+      <i class="material-icons">library_add_check</i>
+      <span>Все задачи</span>
+    </div>
   </div>
   <div class="item" *ngFor="let category of categories;">
-    <i class="material-icons">{{ category.icon }}</i>
-    <span>{{ category.name }}</span>
+    <div class="button"
+         (click)="showTasksByCategory(category)"
+         [class.active]="category === selectedCategory"
+    >
+      <i class="material-icons">{{ category.icon }}</i>
+      <span>{{ category.name }}</span>
+    </div>
   </div>
 </div>
+
+
+
+<!--
+<div class="item"
+  *ngFor="let category of categories;"
+  (click)="showTasksByCategory(category)"
+  [class.active]="category === selected"
+>
+-->
+
+
+

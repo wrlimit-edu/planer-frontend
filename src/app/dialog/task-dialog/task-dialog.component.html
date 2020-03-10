@@ -1,0 +1,44 @@
+<mat-dialog-content>
+
+  <p>{{dialogTitle}}</p>
+
+  <mat-form-field>
+    <mat-label>Название</mat-label>
+    <input matInput #inputName [(ngModel)]="tmpTask.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Категория</mat-label>
+    <mat-select #selectCategory [(ngModel)]="tmpTask.category">
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{category.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Приоритет</mat-label>
+    <mat-select #selectPriority [(ngModel)]="tmpTask.priority">
+      <mat-option *ngFor="let priority of priorities" [value]="priority">
+        {{priority.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput #inputDate placeholder="Дата" readonly="true"
+           [matDatepicker]="picker"
+           [(ngModel)]="tmpTask.date"
+           (click)="picker.open()"
+    >
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button
+    (click)="onConfirm()"
+    [disabled]="(inputName.value.trim().length==0) || (!selectCategory.value) || (!selectPriority.value) || (!inputDate.value)"
+  >Сохранить</button>
+</mat-dialog-actions>

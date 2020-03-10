@@ -1,3 +1,20 @@
-<app-category
-  [categories]="categories"
-></app-category>
+<section id="leftBlock">
+  <app-logo id="logo"></app-logo>
+  <app-category id="category"
+    (selectCategory)="rootSelectCategory($event)"
+    [categories]="categories"
+  ></app-category>
+</section>
+<section id="rightBlock">
+  <section id="topBlock">
+    <app-header id="header"></app-header>
+    <app-task id="task"
+      (addTask)="rootAddTask($event)"
+      [tasks]="tasks"
+      [selectedCategory]="selectedCategory"
+    ></app-task>
+  </section>
+  <section id="bottomBlock">
+    <app-footer id="footer"></app-footer>
+  </section>
+</section>
