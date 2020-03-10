@@ -8,25 +8,25 @@ import {Category} from '../../model/category';
 })
 export class CategoryComponent implements OnInit {
 
-  private selectedCategory: Category;
-
   /* INPUT */
 
   @Input()
   private categories: Category[];
 
+  @Input()
+  private selectedCategory: Category;
+
   /* OUTPUT */
 
   @Output()
-  selectCategory = new EventEmitter<Category>();
+  showCategoryEvent = new EventEmitter<Category>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  showTasksByCategory(category: Category) {
-    this.selectedCategory = category;
-    this.selectCategory.emit(this.selectedCategory);
+  showCategory(category: Category) {
+    this.showCategoryEvent.emit(category);
   }
 }

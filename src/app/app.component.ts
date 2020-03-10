@@ -27,16 +27,15 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.selectedCategory = null;
     this.categoryService.getAll().subscribe(categories => this.categories = categories);
-    this.rootSelectCategory(null);
+    this.showCategoryRoot(null);
   }
 
-  rootSelectCategory(category: Category) {
+  showCategoryRoot(category: Category) {
     if (category == null) {
       this.selectedCategory = null;
       this.taskService.getAll().subscribe(tasks => this.tasks = tasks);
-    } else if (category != this.selectedCategory) {
+    } else {
       this.selectedCategory = category;
       this.taskService.getAllByCategory(this.selectedCategory).subscribe(tasks => this.tasks = tasks);
     }
@@ -44,7 +43,6 @@ export class AppComponent implements OnInit {
 
   rootAddTask(task: Task) {
     this.taskService.create(task).subscribe();
-    this.selectedCategory = task.category;
-    this.taskService.getAllByCategory(this.selectedCategory).subscribe(tasks => this.tasks = tasks);
+    this.showCategoryRoot(task.category);
   }
 }

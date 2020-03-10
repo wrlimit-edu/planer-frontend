@@ -1,8 +1,9 @@
 <section id="leftBlock">
   <app-logo id="logo"></app-logo>
   <app-category id="category"
-    (selectCategory)="rootSelectCategory($event)"
+    (showCategoryEvent)="showCategoryRoot($event)"
     [categories]="categories"
+    [selectedCategory]="selectedCategory"
   ></app-category>
 </section>
 <section id="rightBlock">
@@ -18,3 +19,6 @@
     <app-footer id="footer"></app-footer>
   </section>
 </section>
+
+
+
